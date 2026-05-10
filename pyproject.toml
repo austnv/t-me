@@ -1,7 +1,7 @@
 [project]
 name = "t-me"
 version = "0.1.0"
-description = "Add your description here"
+description = "FastAPI сервис для конвертации Telegram ссылок t.me/ в диплинки tg://"
 readme = "README.md"
 license = "LICENSE"
 requires-python = ">=3.14"
