@@ -1,0 +1,17 @@
+services:
+  app:
+    image: ghcr.io/astral-sh/uv:python3.14-bookworm
+    container_name: t-me
+    restart: unless-stopped
+    ports:
+      - "1234:1234"
+    volumes:
+      - .:/app
+    working_dir: /app
+    command: uv run fastapi run --port 1234
+    networks:
+      - remnawave-network
+
+networks:
+  remnawave-network:
+    external: true
