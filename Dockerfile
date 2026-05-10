@@ -3,7 +3,7 @@ FROM ghcr.io/astral-sh/uv:python3.14-bookworm
 WORKDIR /app
 
 COPY pyproject.toml .
-COPY app/ app/
+COPY . app/
 
 EXPOSE 1234
 
