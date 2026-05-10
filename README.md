@@ -17,11 +17,11 @@ FastAPI сервис для конвертации Telegram ссылок `t.me` 
 
 | Обычная ссылка | Ваша ссылка |
 |----------------|-------------|
-| `t.me/durov` | `t.uvpn.shop/durov` |
-| `t.me/+79991234567` | `t.uvpn.shop/+79991234567` |
-| `t.me/addstickers/emoji` | `t.uvpn.shop/addstickers/emoji` |
-| `t.me/durov/123` | `t.uvpn.shop/durov/123` |
-| `t.me/boost/channel` | `t.uvpn.shop/boost/channel` |
+| `t.me/durov` | `t.domain.me/durov` |
+| `t.me/+79991234567` | `t.domain.me/+79991234567` |
+| `t.me/addstickers/emoji` | `t.domain.me/addstickers/emoji` |
+| `t.me/durov/123` | `t.domain.me/durov/123` |
+| `t.me/boost/channel` | `t.domain.me/boost/channel` |
 
 Сервис перенаправляет на соответствующий `tg://` диплинк, который открывается прямо в приложении.
 
@@ -120,8 +120,8 @@ uv run fastapi run --port 1234
 ### Caddy
 
 ```caddy
-t.uvpn.shop {
-    reverse_proxy localhost:8000
+t.domain.me {
+    reverse_proxy localhost:1234
 }
 ```
 
@@ -130,10 +130,10 @@ t.uvpn.shop {
 ```nginx
 server {
     listen 80;
-    server_name t.uvpn.shop;
+    server_name t.domain.me;
 
     location / {
-        proxy_pass http://localhost:8000;
+        proxy_pass http://localhost:1234;
         proxy_set_header Host $host;
         proxy_set_header X-Real-IP $remote_addr;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
