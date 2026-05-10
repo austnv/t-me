@@ -86,21 +86,9 @@ docker run -d -p 1234:1234 ghcr.io/austnv/t-me:latest
 
 ### Docker Compose
 
-```yaml
-services:
-  app:
-    image: ghcr.io/astral-sh/uv:python3.14-bookworm
-    container_name: t-me
-    restart: unless-stopped
-    ports:
-      - "1234:1234"
-    volumes:
-      - .:/app
-    working_dir: /app
-    command: uv run fastapi run --port 1234
-```
-
 ```bash
+git clone https://github.com/austnv/t-me.git
+cd t-me
 docker compose up -d
 ```
 
