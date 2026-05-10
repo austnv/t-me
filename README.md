@@ -1,6 +1,6 @@
 # t-me
 
-[![Docker Pulls](https://img.shields.io/docker/pulls/austnv/t-me)](https://github.com/austnv/t-me/pkgs/container/t-me)
+[![GitHub Release](https://img.shields.io/github/v/release/austnv/t-me?color=purple)](/releases/latest)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
 FastAPI сервис для конвертации Telegram ссылок `t.me` в диплинки `tg://`.
