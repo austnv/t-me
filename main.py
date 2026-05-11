@@ -1,11 +1,15 @@
 from fastapi import FastAPI, Request, Query
-from fastapi.responses import RedirectResponse
+from fastapi.responses import RedirectResponse, FileResponse
+from fastapi.staticfiles import StaticFiles
 from urllib.parse import quote
 from typing import Optional
 import re
 
 
 app = FastAPI(title='t.uvpn.shop')
+
+
+app.mount("/img", StaticFiles(directory="img"), name="img")
 
 
 @app.get("/contact/{token}")
@@ -450,4 +454,7 @@ async def public_username_links(
     if 'story' in params and params['story']:
         resolve_params.append(f"story={quote(params['story'])}")
     
+    if not username:
+        return FileResponse('index.html')
+
     return RedirectResponse(f"tg://resolve?{'&'.join(resolve_params)}")

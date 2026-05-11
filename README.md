@@ -1,5 +1,13 @@
 # t-me
 
+<div align="center">
+    <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="img/logo-dark.svg">
+        <source media="(prefers-color-scheme: light)" srcset="img/logo-light.svg">
+        <img alt="t-me logo" src="img/logo-light.svg" width="250" style="max-width: 100%;">
+    </picture>
+</div>
+
 [![GitHub Release](https://img.shields.io/github/v/release/austnv/t-me?color=purple)](https://github.com/austnv/t-me/releases/latest)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
